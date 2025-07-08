@@ -1,0 +1,70 @@
+{
+  "name": "designguy-radio-app",
+  "version": "0.1.0",
+  "private": false,
+  "homepage": "/mattvinc-radio-app",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "es-abstract": "^1.21.2",
+    "firebase": "^10.12.2",
+    "lodash.debounce": "^4.0.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-typescript": "^7.24.7",
+    "@jest/globals": "^29.7.0",
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__template": "^7.4.4",
+    "@types/babel__traverse": "^7.20.7",
+    "@types/bonjour": "^3.5.13",
+    "@types/estree": "^1.0.8",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/node": "^24.0.10",
+    "@types/prettier": "^2.7.3",
+    "@types/testing-library__jest-dom": "^5.14.9",
+    "@types/trusted-types": "^2.0.7",
+    "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.1.1",
+    "jest": "^27.5.1",
+    "postcss": "^8.5.6",
+    "react-router-dom": "^6.23.1",
+    "tailwindcss": "^4.1.11"
+  }
+}

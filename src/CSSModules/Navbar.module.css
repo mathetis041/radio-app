@@ -1,0 +1,98 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.signin {
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    background-color: transparent;
+}
+
+.signin:hover {
+    background-color: #eff6ff;
+}
+
+.signup {
+    background-color: #2563eb;
+    color: white;
+}
+
+.signup:hover {
+    background-color: #1d4ed8;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.bar,
+.barActive {
+    width: 24px;
+    height: 2px;
+    background-color: #1f2937;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 425px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .actions {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 200px;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .show {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
