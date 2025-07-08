@@ -1,8 +1,9 @@
 import Navbar from "../Components/navbar";
 import debounce from "lodash.debounce";
 import styles from "../CSSModules/Home.module.css";
-import { useMemo } from "react";
 import { AuthContext } from "../Contexts/authContext";
+
+// import { useMemo } from "react";
 
 import React, {
     useCallback,
@@ -24,6 +25,7 @@ interface Station {
 }
 
 const Home: React.FC = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const authContext = useContext(AuthContext);
     const [stations, setStations] = useState<Station[]>([]);
     const [filteredStations, setFilteredStations] = useState<Station[]>([]);
@@ -66,6 +68,7 @@ const Home: React.FC = () => {
         fetchStations();
     }, [fetchStations]);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedFetch = useCallback(
         debounce((query: string) => {
             fetchStations(query);
@@ -112,6 +115,7 @@ const Home: React.FC = () => {
         setFilteredStations([]);
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleOnline = useCallback(
         debounce(() => {
             if (navigator.onLine && selectedStation && audioRef.current) {
