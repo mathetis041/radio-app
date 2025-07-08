@@ -11,7 +11,8 @@ const useValid = () => {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [error, setError] = useState<string>("");
-    const [message, setMessage] = useState<string>("");
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [message] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
