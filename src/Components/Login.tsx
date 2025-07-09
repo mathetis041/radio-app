@@ -49,8 +49,21 @@ const useValid = () => {
                 .catch((err) => {
                     setLoading(false);
                     // console.log("Error logging user in:", err.code);
-                    setError(err.code);
+                    switch (err.code) {
+                        case "auth/user-not-found":
+                            setError("User not found. Please check your email.");
+                            break;
+                        case "auth/wrong-password":
+                            setError("Incorrect password. Try again.");
+                            break;
+                        case "auth/invalid-credential":
+                            setError("Invalid email or password.");
+                            break;
+                        default:
+                            setError("Something went wrong. Try again later.");
+                    }
                 });
+
         }
         setLoading(false);
 

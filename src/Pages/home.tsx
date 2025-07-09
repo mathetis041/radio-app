@@ -57,16 +57,56 @@ const Home: React.FC = () => {
 
             setStations(validStations);
             setFilteredStations(validStations.slice(0, 4));
+
+            if (validStations.length > 0 && !selectedStation) {
+                setSelectedStation(validStations[0]);
+            }
+
         } catch {
             setError("Unable to load stations. Please try again later.");
         } finally {
             setLoading(false);
         }
-    }, []);
+    }, [selectedStation]);
 
     useEffect(() => {
         fetchStations();
     }, [fetchStations]);
+
+    useEffect(() => {
+        const handleUserInteraction = () => {
+            if (selectedStation && audioRef.current) {
+                audioRef.current.src = selectedStation.url;
+                audioRef.current.load();
+                audioRef.current
+                    .play()
+                    .catch((err) => console.warn("Autoplay on user interaction failed:", err));
+            }
+
+            document.removeEventListener("click", handleUserInteraction);
+            document.removeEventListener("keydown", handleUserInteraction);
+        };
+
+        document.addEventListener("click", handleUserInteraction);
+        document.addEventListener("keydown", handleUserInteraction);
+
+        return () => {
+            document.removeEventListener("click", handleUserInteraction);
+            document.removeEventListener("keydown", handleUserInteraction);
+        };
+    }, [selectedStation]);
+
+
+    useEffect(() => {
+        if (selectedStation && audioRef.current) {
+            audioRef.current.src = selectedStation.url;
+            audioRef.current.load();
+            audioRef.current
+                .play()
+                .catch((err) => console.warn("Autoplay on first load failed:", err));
+        }
+    }, [selectedStation]);
+
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedFetch = useCallback(
