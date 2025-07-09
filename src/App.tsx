@@ -40,7 +40,7 @@ function App() {
     }, [accessToken, isLoggedIn]);
 
     return (
-        <Router basename="/mattvinc-radio-app">
+        <Router>
 
             <Routes>
                 <Route path="/login" element={<Login />} />
