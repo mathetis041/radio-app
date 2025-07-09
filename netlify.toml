@@ -1,6 +1,6 @@
 [build]
-  publish = "build"
-  command = "npm run build"
+  publish = "mattvinc-radio-app"
+  command = "npm run build && mv build mattvinc-radio-app"
 
 [[redirects]]
   from = "/mattvinc-radio-app/*"
