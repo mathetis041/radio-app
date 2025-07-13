@@ -18,13 +18,15 @@ export default function ContextProvider({ children }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const BASE_URL = process.env.REACT_APP_RADIO_API;
+
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
         const resp = await fetch(
-          "https://de1.api.radio-browser.info/json/stations/topclick/30"
-        );
+          `${BASE_URL}/json/stations/topclick/30`);
         const respData = await resp.json();
         setData(respData);
       } catch (err) {
