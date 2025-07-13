@@ -2,13 +2,6 @@
 
 Welcome to **MattVinc Radio**, a modern, responsive radio streaming web app built with React and TypeScript. Tune in to thousands of live radio stations across the globe — search by country, station, or genre — all in one smooth UI experience.
 
-
----
-
-## 📸 Preview
-
-![MattVinc Radio UI Preview](./preview.png)
-
 ---
 
 ## 🚀 Features
