@@ -59,13 +59,13 @@ const useValidation = () => {
 
       try {
         doCreateUserWithEmailAndPassword(email, password)
-          .then(r => {
-            setLoading(false)
+          .then(async (r) => {
+            setLoading(false);
             console.log("User created successfully", r);
-            doSendEmailVerification()
-            setError('');
-            setIsOpen(true)
 
+            await doSendEmailVerification(r.user);
+            setError('');
+            setIsOpen(true);
           })
           .catch(err => {
             setLoading(false)

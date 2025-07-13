@@ -1,3 +1,4 @@
+import { User } from "firebase/auth";
 import { auth } from "./firebase";
 
 import {
@@ -30,10 +31,6 @@ export const doPasswordReset = (email: string): Promise<void> => {
     return sendPasswordResetEmail(auth, email);
 };
 
-export const doSendEmailVerification = (): Promise<void> => {
-    if (auth.currentUser) {
-        return sendEmailVerification(auth.currentUser);
-    } else {
-        return Promise.reject(new Error("No user is currently signed in."));
-    }
+export const doSendEmailVerification = (user: User): Promise<void> => {
+    return sendEmailVerification(user);
 };
