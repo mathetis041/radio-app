@@ -121,7 +121,7 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-      <Modal isOpen={isOpen} children='Check your mail for Verification, Before proceeding to login' onClose={() => setIsOpen(false)} />
+      <Modal isOpen={isOpen} children='We have sent a verification link to your email address, if you do not see it, please check your Spam or Promotion folder.' onClose={() => setIsOpen(false)} />
       <div className={style.container}>
         <div className={style.left}>
           <div className={style.mainText}>
@@ -186,7 +186,7 @@ const SignUp: React.FC = () => {
               </div>
               <div>
                 <p className={style["extra-text"]}>
-                  By signing in, you agree to MattVinc Radio
+                  By signing in, you agree to  Radio
                 </p>
                 <p className={style["extra-text2"]}>Terms and Conditions</p>
               </div>
